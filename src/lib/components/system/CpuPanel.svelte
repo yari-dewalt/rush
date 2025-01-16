@@ -5,9 +5,12 @@
   import { faMicrochip } from "@fortawesome/free-solid-svg-icons";
 
   let { cpuUsages, type } = $props();
+  let usageValue = $derived(
+    cpuUsages?.length ? cpuUsages.reduce((a, b) => a + b) / cpuUsages.length : 0
+  );
 </script>
 
-<Panel icon={faMicrochip} title="CPU Usage">
+<Panel icon={faMicrochip} title="CPU Usage" {usageValue}>
   {#if type === 'bars'}
     <CpuUsageBars {cpuUsages} />
   {/if}
