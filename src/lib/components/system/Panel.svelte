@@ -5,7 +5,7 @@
   let { icon, title, usageValue } = $props();
 </script>
 
-<div class="rounded-lg flex flex-col gap-2 bg-primary p-3">
+<div class="rounded-lg flex flex-col gap-2 bg-primary p-3 max-h-full">
   <div class="flex justify-between items-center">
     <div class="flex items-center gap-2">
       <Fa {icon} class="text-text-primary"/>
@@ -17,6 +17,6 @@
       </div>
     {/if}
   </div>
-  <div class="h-[1px] w-full bg-secondary"></div>
+  <div class="min-h-[1px] w-full bg-secondary"></div>
   <slot></slot>
 </div>
