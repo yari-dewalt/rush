@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let cpuUsages: Array<number>;
+  let { cpuUsages } = $props();
 </script>
 
 <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-text-secondary max-h-28 overflow-y-auto">

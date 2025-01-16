@@ -4,8 +4,7 @@
 
   import { faMicrochip } from "@fortawesome/free-solid-svg-icons";
 
-  export let cpuUsages: Array<number>;
-  export let type;
+  let { cpuUsages, type } = $props();
 </script>
 
 <Panel icon={faMicrochip} title="CPU Usage">

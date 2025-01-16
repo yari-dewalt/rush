@@ -2,9 +2,7 @@
   import Fa from "svelte-fa";
   import type { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 
-  export let icon: IconDefinition;
-  export let title;
-  export let usageValue;
+  let { icon, title, usageValue } = $props();
 </script>
 
 <div class="rounded-lg flex flex-col gap-1 bg-primary p-3">
