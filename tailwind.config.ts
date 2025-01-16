@@ -21,6 +21,7 @@ export default {
         'secondary': '#2F2F3D',
         'text-primary': '#E0E0E0',
         'text-secondary': '#A0A0A0',
+        'accent-primary': '#7AAACF',
       },
       dracula: {
 
