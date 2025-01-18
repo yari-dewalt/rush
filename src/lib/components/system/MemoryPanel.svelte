@@ -3,9 +3,15 @@
   import MemoryBars from "./MemoryBars.svelte";
 
   import { faMemory } from "@fortawesome/free-solid-svg-icons";
+	import type { MemoryData } from "$lib/types";
 
-  let { memoryData, type } = $props();
-  let usageValue = $derived((memoryData.used_memory / memoryData.total_memory) * 100);
+  interface MemoryPanelProps {
+    memoryData: MemoryData;
+    type: string;
+  };
+
+  let { memoryData, type }: MemoryPanelProps = $props();
+  let usageValue = $derived((memoryData.usedMemory / memoryData.totalMemory) * 100);
 </script>
 
 <Panel icon={faMemory} title="Memory" {usageValue}>

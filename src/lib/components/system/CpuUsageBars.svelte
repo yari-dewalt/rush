@@ -1,5 +1,5 @@
 <script lang="ts">
-  let { cpuUsages } = $props();
+  let { cpuUsages }: { cpuUsages: number[] } = $props();
 </script>
 
 <div class="grid grid-cols-2 gap-x-4 gap-y-1.5 overflow-y-auto">

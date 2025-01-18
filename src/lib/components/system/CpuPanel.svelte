@@ -4,7 +4,13 @@
 
   import { faMicrochip } from "@fortawesome/free-solid-svg-icons";
 
-  let { cpuUsages, type } = $props();
+  interface CpuPanelProps {
+    cpuUsages: number[];
+    type: string;
+  };
+
+  let { cpuUsages, type }: CpuPanelProps = $props();
+  
   let usageValue = $derived(
     cpuUsages?.length ? cpuUsages.reduce((a, b) => a + b) / cpuUsages.length : 0
   );
