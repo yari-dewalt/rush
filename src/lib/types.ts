@@ -7,9 +7,13 @@ export interface SystemInfo {
     disk_total_bytes: number,
     disk_used_bytes: number,
     disk_free_bytes: number,
-    diskRead: number,
-    diskWrite: number,
+    disk_read: number,
+    disk_write: number,
     disks: Disk[],
+    network_received: number,
+    network_transmitted: number,
+    network_total_received: number,
+    network_total_transmitted: number,
 };
 
 export interface MemoryData {
@@ -24,6 +28,13 @@ export interface StorageData {
     used: number,
     read: number,
     write: number,
+};
+
+export interface NetworkData {
+  received: number,
+  transmitted: number,
+  totalReceived: number,
+  totalTransmitted: number,
 };
 
 export interface Disk {

@@ -13,8 +13,10 @@ pub struct SystemStats {
     pub disk_read: u64,
     pub disk_write: u64,
     pub disks: Vec<DiskInfo>,
-    //pub network_rx_bytes: u64,
-    //pub network_tx_bytes: u64,
+    pub network_received: u64,
+    pub network_transmitted: u64,
+    pub network_total_received: u64,
+    pub network_total_transmitted: u64,
 }
 
 #[derive(Serialize)]

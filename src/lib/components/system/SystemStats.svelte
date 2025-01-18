@@ -2,6 +2,7 @@
   import CpuPanel from '$lib/components/system/CpuPanel.svelte';
   import MemoryPanel from '$lib/components/system/MemoryPanel.svelte';
   import StoragePanel from '$lib/components/system/StoragePanel.svelte';
+  import NetworkPanel from '$lib/components/system/NetworkPanel.svelte';
 	import type { MemoryData, StorageData, SystemInfo } from '$lib/types';
   
   let { systemInfo }: { systemInfo: SystemInfo } = $props();
@@ -18,8 +19,8 @@
     total: systemInfo.disk_total_bytes,
     free: systemInfo.disk_free_bytes,
     used: systemInfo.disk_used_bytes,
-    diskRead: systemInfo.disk_read,
-    diskWrite: systemInfo.disk_write,
+    read: systemInfo.disk_read,
+    write: systemInfo.disk_write,
   });
   
   let disks: Disk[] = $derived(systemInfo.disks?.map(disk => ({
@@ -29,10 +30,18 @@
     readUsage: disk.usage[0],
     writeUsage: disk.usage[1],
   })));
+
+  let networkData: NetworkData = $derived({
+    received: systemInfo.network_received,
+    transmitted: systemInfo.network_transmitted,
+    totalReceived: systemInfo.network_total_received,
+    totalTransmitted: systemInfo.network_total_transmitted,
+  });
 </script>
 
 <div class="flex p-2 gap-2 h-[10.5rem]">
   <CpuPanel type='bars' {cpuUsages} />
   <MemoryPanel type='bars' {memoryData} />
   <StoragePanel type='text' {storageData} {disks} />
+  <NetworkPanel type='text' {networkData} />
 </div>

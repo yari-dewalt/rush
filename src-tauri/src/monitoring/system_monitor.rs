@@ -1,15 +1,17 @@
 use super::{SystemStats, DiskInfo};
-use sysinfo::{Disk, Disks};
+use sysinfo::{Disk, Disks, Networks};
 use std::path::Path;
 
 pub struct SystemMonitor {
-    disks: Disks
+    disks: Disks,
+    networks: Networks
 }
 
 impl SystemMonitor {
     pub fn new() -> Self {
         Self {
             disks: Disks::new_with_refreshed_list(),
+            networks: Networks::new_with_refreshed_list(),
         }
     }
 
@@ -37,7 +39,20 @@ impl SystemMonitor {
             disk_write += disk_usage.written_bytes;
         }
 
+        let mut network_received = 0;
+        let mut network_total_received = 0;
+        let mut network_transmitted = 0;
+        let mut network_total_transmitted = 0;
+
+        for (_, network) in &self.networks {
+            network_received += network.received();
+            network_total_received += network.total_received();
+            network_transmitted += network.transmitted();
+            network_total_transmitted += network.total_transmitted();
+        }
+
         self.disks.refresh(true);
+        self.networks.refresh(true);
 
         SystemStats {
             cpu_usage: sys.cpus().iter().map(|cpu| cpu.cpu_usage()).collect(),
@@ -51,6 +66,10 @@ impl SystemMonitor {
             disk_read,
             disk_write,
             disks: disk_vec,
+            network_received,
+            network_transmitted,
+            network_total_received,
+            network_total_transmitted,
         }
     }
 
