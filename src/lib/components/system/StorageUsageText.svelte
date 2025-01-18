@@ -8,10 +8,10 @@
 <div class="flex flex-col text-xs gap-1.5">
   <div class="flex items-center justify-between">
     <p class="text-text-secondary">Read</p>
-    <p class="text-text-primary">{convertBytes(storageData.diskRead, 0)}</p>
+    <p class="text-text-primary">{convertBytes(storageData.read, 0)}</p>
   </div>
   <div class="flex items-center justify-between">
     <p class="text-text-secondary">Write</p>
-    <p class="text-text-primary">{convertBytes(storageData.diskWrite, 0)}</p>
+    <p class="text-text-primary">{convertBytes(storageData.write, 0)}</p>
   </div>
 </div>
