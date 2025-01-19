@@ -15,7 +15,7 @@
   let { children, icon, title, usageValue, hoverInfo }: PanelProps = $props();
 </script>
 
-<div class="rounded-lg flex flex-col gap-2 bg-primary p-3 max-h-full">
+<div class="rounded-lg flex flex-col gap-2 bg-primary p-3 max-h-full grow min-w-fit">
   <div class="flex justify-between items-center">
     <div class="flex items-center gap-2">
       <Fa {icon} class="text-text-primary"/>
