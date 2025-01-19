@@ -3,9 +3,10 @@
   import MemoryPanel from '$lib/components/system/MemoryPanel.svelte';
   import StoragePanel from '$lib/components/system/StoragePanel.svelte';
   import NetworkPanel from '$lib/components/system/NetworkPanel.svelte';
+  import SystemPanel from '$lib/components/system/SystemPanel.svelte';
 	import type { MemoryData, StorageData, SystemInfo } from '$lib/types';
   
-  let { systemInfo }: { systemInfo: SystemInfo } = $props();
+  let { systemInfo, numProcesses }: { systemInfo: SystemInfo } = $props();
 
   let cpuUsages: number[] = $derived(systemInfo.cpu_usage);
 
@@ -39,9 +40,10 @@
   });
 </script>
 
-<div class="flex p-2 gap-2 h-[10.5rem]">
+<div class="flex p-2 gap-2 h-[10.5rem] overflow-y-auto">
   <CpuPanel type='bars' {cpuUsages} />
   <MemoryPanel type='bars' {memoryData} />
   <StoragePanel type='text' {storageData} {disks} />
   <NetworkPanel type='text' {networkData} />
+  <SystemPanel {systemInfo} {numProcesses} />
 </div>

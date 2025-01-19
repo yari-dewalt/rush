@@ -7,6 +7,7 @@ pub struct SystemStats {
     pub free_memory: u64,
     pub used_memory: u64,
     pub uptime: u64,
+    pub host_name: String,
     pub disk_total_bytes: u64,
     pub disk_used_bytes: u64,
     pub disk_free_bytes: u64,

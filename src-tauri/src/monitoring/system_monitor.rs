@@ -60,6 +60,7 @@ impl SystemMonitor {
             free_memory: sys.free_memory(),
             used_memory: sys.used_memory(),
             uptime: sysinfo::System::uptime(),
+            host_name: sysinfo::System::host_name().unwrap(),
             disk_total_bytes,
             disk_used_bytes: disk_total_bytes - disk_free_bytes,
             disk_free_bytes,

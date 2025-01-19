@@ -4,6 +4,7 @@ export interface SystemInfo {
     free_memory: number,
     used_memory: number,
     uptime: number,
+    host_name: string,
     disk_total_bytes: number,
     disk_used_bytes: number,
     disk_free_bytes: number,
