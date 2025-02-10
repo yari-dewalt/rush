@@ -39,3 +39,7 @@ export function convertSeconds(seconds: number): string {
 
   return parts.slice(0, 3).join(' ');
 }
+
+export function formatEpochTime(epoch: number): string {
+  return new Date(epoch * 1000).toLocaleString();
+}
