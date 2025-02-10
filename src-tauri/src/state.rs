@@ -12,7 +12,7 @@ impl AppState {
     pub fn new() -> Self {
         let mut sys = System::new();
         sys.refresh_all();
-        
+
         Self {
             sys: Mutex::new(sys),
             process_monitor: Mutex::new(ProcessMonitor::new()),

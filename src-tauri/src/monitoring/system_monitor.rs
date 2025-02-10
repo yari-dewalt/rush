@@ -1,10 +1,10 @@
-use super::{SystemStats, DiskInfo};
-use sysinfo::{Disk, Disks, Networks};
+use super::{DiskInfo, SystemStats};
 use std::path::Path;
+use sysinfo::{Disk, Disks, Networks};
 
 pub struct SystemMonitor {
     disks: Disks,
-    networks: Networks
+    networks: Networks,
 }
 
 impl SystemMonitor {

@@ -46,3 +46,22 @@ export interface Disk {
     readUsage: number,
     writeUsage: number,
 };
+
+export interface Process {
+  name: string,
+  pid: string,
+  status: string,
+  cpu_usage: number,
+  memory_usage: number,
+  virtual_memory: number,
+  disk_usage: number[],
+  run_time: number,
+};
+
+export type SortDirection = 'asc' | 'desc' | 'upDown';
+
+export interface Settings {
+  interval: number,
+  processesPerPage: number,
+  theme: string,
+}

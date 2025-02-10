@@ -4,9 +4,9 @@
   import StoragePanel from '$lib/components/system/StoragePanel.svelte';
   import NetworkPanel from '$lib/components/system/NetworkPanel.svelte';
   import SystemPanel from '$lib/components/system/SystemPanel.svelte';
-	import type { MemoryData, StorageData, SystemInfo } from '$lib/types';
+	import type { Disk, MemoryData, NetworkData, StorageData, SystemInfo } from '$lib/types';
   
-  let { systemInfo, numProcesses }: { systemInfo: SystemInfo } = $props();
+  let { systemInfo, numProcesses }: { systemInfo: SystemInfo, numProcesses: number } = $props();
 
   let cpuUsages: number[] = $derived(systemInfo.cpu_usage);
 
@@ -24,12 +24,13 @@
     write: systemInfo.disk_write,
   });
   
-  let disks: Disk[] = $derived(systemInfo.disks?.map(disk => ({
+  let disks: Disk[] = $derived(systemInfo.disks?.map((disk: any) => ({
     name: disk.name,
     totalSpace: disk.total_space,
     availableSpace: disk.available_space,
     readUsage: disk.usage[0],
     writeUsage: disk.usage[1],
+    kind: disk.kind,
   })));
 
   let networkData: NetworkData = $derived({
