@@ -64,4 +64,5 @@ export interface Settings {
   interval: number,
   processesPerPage: number,
   theme: string,
+  showWarningPopup: boolean,
 }

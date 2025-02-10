@@ -4,7 +4,11 @@
 
   type ArrowState = 'upDown' | 'asc' | 'desc';
 
-  let { text, arrowState, clickHandler } = $props<{
+  let { text, arrowState, clickHandler }: {
+    text: string;
+    arrowState: ArrowState;
+    clickHandler: () => void;
+  } = $props<{
     text: string;
     arrowState: ArrowState;
     clickHandler: () => void;

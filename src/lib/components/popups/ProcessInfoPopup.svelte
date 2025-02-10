@@ -18,8 +18,8 @@
 </script>
 
 <div class="relative rounded-lg flex flex-col gap-2 bg-primary p-3 w-96">
-  <button onclick={closePopup} class="absolute top-3 right-3 group rounded-md bg-secondary p-1.5 border border-1 border-text-secondary border-opacity-50 hover:border-opacity-100">
-    <Fa icon={faXmark} size="xs" class="text-text-secondary group-hover:text-text-primary" />
+  <button onclick={closePopup} class="w-6 h-6 flex justify-center items-center absolute top-3 right-3 group rounded-md bg-secondary p-1.5 border border-1 border-text-secondary border-opacity-50 hover:border-opacity-100">
+    <Fa icon={faXmark} class="text-text-secondary group-hover:text-text-primary" />
   </button>
   <div class="flex gap-2 justify-center items-center">
     <ProcessIcon processName={process.name} />
