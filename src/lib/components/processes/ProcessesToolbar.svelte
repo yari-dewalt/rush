@@ -76,7 +76,7 @@
         <p class="whitespace-nowrap">{status}</p>
         <Fa icon={faChevronDown} class="text-text-secondary group-hover:text-text-primary" />
       </button>
-      <Dropdown bind:open={statusDropDownOpen} triggeredBy="#statuses-dropdown" class="min-w-24 border border-[1px] border-text-secondary bg-secondary rounded-md text-text-secondary w-full">
+      <Dropdown bind:open={statusDropDownOpen} triggeredBy="#statuses-dropdown" class="min-w-24 border border-text-secondary bg-secondary rounded-md text-text-secondary w-full">
         <DropdownItem onclick={() => updateStatus('All Statuses')} class="p-2 text-xs hover:text-text-primary">All Statuses</DropdownItem>
         <DropdownDivider class="h-[1px] w-full bg-text-secondary opacity-80" />
         <DropdownItem onclick={() => updateStatus('Running')} class="p-2 text-xs hover:text-text-primary">Running</DropdownItem>
