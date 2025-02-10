@@ -76,6 +76,12 @@
       <DropdownItem onclick={() => changeTheme('Light')} class="p-2 text-xs hover:text-text-primary">Light</DropdownItem>
       <DropdownDivider class="h-[1px] w-full bg-text-secondary opacity-80" />
       <DropdownItem onclick={() => changeTheme('Dark')} class="p-2 text-xs hover:text-text-primary">Dark</DropdownItem>
+      <DropdownDivider class="h-[1px] w-full bg-text-secondary opacity-80" />
+      <DropdownItem onclick={() => changeTheme('Dracula')} class="p-2 text-xs hover:text-text-primary">Dracula</DropdownItem>
+      <DropdownDivider class="h-[1px] w-full bg-text-secondary opacity-80" />
+      <DropdownItem onclick={() => changeTheme('Coffee')} class="p-2 text-xs hover:text-text-primary">Coffee</DropdownItem>
+      <DropdownDivider class="h-[1px] w-full bg-text-secondary opacity-80" />
+      <DropdownItem onclick={() => changeTheme('Forest')} class="p-2 text-xs hover:text-text-primary">Forest</DropdownItem>
     </Dropdown>
   </div>
   <div class="flex justify-between items-center">
