@@ -61,20 +61,20 @@
     <DropdownDivider class="h-[1px] w-full bg-text-secondary opacity-80" />
     <DropdownItem onclick={() => handleAmountPerPageChange(45)} class="p-2 text-xs hover:text-text-primary">45 per page</DropdownItem>
   </Dropdown>
-  <button onclick={goToFirstPage} disabled={pageNumber <= 1} class="{pageNumber <= 1 ? 'opacity-50' : 'hover:border-opacity-100 hover:text-text-primary'} group rounded-md bg-secondary p-1.5 border border-1 border-text-secondary border-opacity-50 text-text-secondary h-7 w-7 flex items-center justify-center">
+  <button onclick={goToFirstPage} disabled={pageNumber <= 1} class="{pageNumber <= 1 ? 'opacity-50 hover:cursor-not-allowed' : 'hover:border-opacity-100 hover:text-text-primary'} group rounded-md bg-secondary p-1.5 border border-1 border-text-secondary border-opacity-50 text-text-secondary h-7 w-7 flex items-center justify-center">
     ««
   </button>
-  <button onclick={previousPage} disabled={pageNumber <= 1} class="{pageNumber <= 1 ? 'opacity-50' : 'hover:border-opacity-100 hover:text-text-primary'} group rounded-md bg-secondary p-1.5 border border-1 border-text-secondary border-opacity-50 text-text-secondary h-7 w-7 flex items-center justify-center">
+  <button onclick={previousPage} disabled={pageNumber <= 1} class="{pageNumber <= 1 ? 'opacity-50 hover:cursor-not-allowed' : 'hover:border-opacity-100 hover:text-text-primary'} group rounded-md bg-secondary p-1.5 border border-1 border-text-secondary border-opacity-50 text-text-secondary h-7 w-7 flex items-center justify-center">
     «
   </button>
   <div class="whitespace-nowrap flex flex-col items-center text-xs text-text-secondary">
     <p>Page {pageNumber} of {lastPage || 1}</p>
     <p class="opacity-70">({processes.length} processes)</p>
   </div>
-  <button onclick={nextPage} disabled={pageNumber >= lastPage} class="{pageNumber >= lastPage ? 'opacity-50' : 'hover:border-opacity-100 hover:text-text-primary'} group rounded-md bg-secondary p-1.5 border border-1 border-text-secondary border-opacity-50 text-text-secondary h-7 w-7 flex items-center justify-center">
+  <button onclick={nextPage} disabled={pageNumber >= lastPage} class="{pageNumber >= lastPage ? 'opacity-50 hover:cursor-not-allowed' : 'hover:border-opacity-100 hover:text-text-primary'} group rounded-md bg-secondary p-1.5 border border-1 border-text-secondary border-opacity-50 text-text-secondary h-7 w-7 flex items-center justify-center">
     »
   </button>
-  <button onclick={goToLastPage} disabled={pageNumber >= lastPage} class="{pageNumber >= lastPage ? 'opacity-50' : 'hover:border-opacity-100 hover:text-text-primary'} group rounded-md bg-secondary p-1.5 border border-1 border-text-secondary border-opacity-50 text-text-secondary h-7 w-7 flex items-center justify-center">
+  <button onclick={goToLastPage} disabled={pageNumber >= lastPage} class="{pageNumber >= lastPage ? 'opacity-50 hover:cursor-not-allowed' : 'hover:border-opacity-100 hover:text-text-primary'} group rounded-md bg-secondary p-1.5 border border-1 border-text-secondary border-opacity-50 text-text-secondary h-7 w-7 flex items-center justify-center">
     »»
   </button>
 </div>
