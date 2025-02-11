@@ -26,11 +26,11 @@
   });
 </script>
 
-<div class="{settings.theme.toLowerCase()} bg-background flex flex-col min-h-screen w-full overflow-x-hidden">
-  <div class="max-h-1/4">
+<div class="{settings.theme.toLowerCase()} bg-background flex flex-col min-h-screen max-h-screen w-full overflow-x-hidden">
+  <div class="h-1/4">
     <SystemStats {systemInfo} {numProcesses} />
   </div>
-  <div class="h-3/4">
+  <div class="h-3/4 overflow-y-auto">
     <Processes {processes} />
   </div>
   <PopupManager {processes} />

@@ -7,10 +7,10 @@
 
   let { processes, pageNumber, setPageNumber } = $props();
 
-  let processesPerPage = $state(15);
+  const settings: Settings = getContext('settings');
+  let processesPerPage = $state(settings.processesPerPage);
   let lastPage = $derived(Math.ceil(processes.length / processesPerPage));
   let dropDownOpen = $state(false);
-  const settings: Settings = getContext('settings');
 
   $effect(() => {
     if (pageNumber > lastPage) {
