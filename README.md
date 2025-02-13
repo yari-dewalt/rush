@@ -18,6 +18,7 @@
   - [Installation](#installation)
 - [Development](#development)
   - [Setup](#setup)
+- [Future Improvements](#future-improvements)
 - [License](#license)
 
 ## Features
@@ -68,6 +69,12 @@ npm run tauri dev
 # Build for production
 npm run tauri build
 ```
+
+## Future Improvements
+- Column organization
+- System info panel customization (different looks, graphs, etc.)
+- Better process info screen
+- UI/UX
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
